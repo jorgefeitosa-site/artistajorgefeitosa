@@ -1,0 +1,6 @@
+{
+  "name": "Jorge Feitosa - Artista Visual",
+  "description": "Portfólio oficial do artista contemporâneo brasileiro Jorge Feitosa. Explore matérias, ritos e memórias ancestrais da Amazônia.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
