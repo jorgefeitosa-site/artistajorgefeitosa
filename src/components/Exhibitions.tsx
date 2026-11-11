@@ -273,7 +273,7 @@ export default function Exhibitions({ currentLang }: ExhibitionsProps) {
                         animate={{ opacity: 1, y: 0, scale: 1 }}
                         exit={{ opacity: 0, scale: 0.95 }}
                         transition={{ duration: 0.25 }}
-                        className="absolute bottom-8 left-1/2 -translate-x-1/2 w-72 bg-clay-black border border-clay-black/56 p-4 shadow-2xl z-30 pointer-events-none rounded-none text-left"
+                        className="absolute bottom-8 left-1/2 -translate-x-1/2 w-72 bg-white/95 border border-clay-black/25 p-4 shadow-2xl z-30 pointer-events-none rounded-none text-left"
                       >
                         <div className="border-b border-clay-black/30 pb-2 mb-2">
                           <div className="flex items-center space-x-1.5">
