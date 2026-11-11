@@ -18,7 +18,7 @@ export default function Biography({ currentLang }: BiographyProps) {
     <section
       ref={sectionRef}
       id="biography"
-      className="relative w-full bg-white py-24 md:py-36 px-6 md:px-12 select-text overflow-hidden border-t border-clay-light/20"
+      className="relative w-full bg-white py-20 md:py-28 px-6 md:px-12 select-text overflow-hidden border-t border-clay-light/20"
     >
       <h2 className="sr-only">{t.seoTitle}</h2>
 
@@ -29,7 +29,7 @@ export default function Biography({ currentLang }: BiographyProps) {
           initial={{ opacity: 0, y: 40 }}
           animate={isVisible ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-          className="mb-20 md:mb-28 flex flex-col items-center"
+          className="mb-12 md:mb-20 flex flex-col items-center"
         >
           <div className="relative w-full max-w-lg mx-auto overflow-hidden shadow-xl">
             <img
@@ -70,7 +70,7 @@ export default function Biography({ currentLang }: BiographyProps) {
               initial={{ opacity: 0 }}
               animate={isVisible ? { opacity: 1 } : {}}
               transition={{ duration: 1.2, delay: 0.2 }}
-              className="space-y-6 text-sm sm:text-base text-clay-black dark:text-neutral-300 leading-relaxed text-justify xl:leading-loose font-normal"
+              className="space-y-6 text-sm sm:text-base text-clay-black dark:text-neutral-300 leading-relaxed text-left xl:leading-loose font-normal"
             >
               <p>{t.p1}</p>
               <p>{t.p2}</p>
@@ -83,7 +83,7 @@ export default function Biography({ currentLang }: BiographyProps) {
           </div>
 
           {/* RIGHT COLUMN: Interactive Visual Timeline */}
-          <div className="col-span-1 lg:col-span-6 flex flex-col justify-start lg:pl-8 xl:pl-16 relative mt-12 lg:mt-0">
+          <div className="col-span-1 lg:col-span-6 flex flex-col justify-start lg:pl-8 xl:pl-16 relative mt-6 lg:mt-0">
             
             {/* Background vertical subtle gold line thread */}
             <div className="absolute left-[13px] sm:left-[17px] top-6 bottom-6 w-[1.5px] bg-gradient-to-b from-clay-black/40 via-clay-light to-transparent" />
