@@ -166,7 +166,9 @@ function htmlPage(page, lang) {
     inLanguage: lang === 'pt' ? 'pt-BR' : 'en',
     about: { '@id': domain + '/#artist' },
     isPartOf: { '@id': domain + '/#website' },
-    mainEntity: { '@id': domain + '/#artist' },
+    mainEntity: page.kind === 'artist'
+      ? { '@type': 'Person', '@id': domain + '/#artist', name: 'Jorge Feitosa', url: domain + '/' }
+      : { '@id': domain + '/#artist' },
   };
   const json = JSON.stringify(schema).replace(/</g, '\\u003c');
   return '<!doctype html>\n' +
