@@ -64,21 +64,21 @@ export default function Process({ currentLang }: ProcessProps) {
     <section
       ref={containerRef}
       id="process"
-      className="relative w-full bg-white py-24 md:py-36 px-6 md:px-12 select-text overflow-hidden border-t border-gray-100"
+      className="relative w-full bg-white py-20 md:py-28 px-6 md:px-12 select-text overflow-hidden border-t border-gray-100"
     >
       <h2 className="sr-only">{t.seoTitle}</h2>
 
       <div className="max-w-7xl mx-auto">
         <div className="max-w-2xl mb-16 md:mb-24">
           <span className="font-mono text-xs text-black tracking-widest uppercase block mb-3">
-            {currentLang === 'pt' ? 'DIRETRIZ FILOSÓFICA' : 'PHILOSOPHICAL ETHOS'}
+            {currentLang === 'pt' ? 'PESQUISA ARTÍSTICA' : 'ARTISTIC RESEARCH'}
           </span>
           <h3 className="font-serif text-3xl md:text-5xl text-black font-light tracking-wide">
             {t.title}
           </h3>
         </div>
 
-        <div className="space-y-32 md:space-y-48">
+        <div className="space-y-20 md:space-y-32">
           {processBlocksList.map((block, index) => {
             const isEven = index % 2 === 0;
             const cfg = blockConfig[block.id] || { images: [] };
