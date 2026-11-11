@@ -34,8 +34,8 @@ const obras: Obra[] = [
     titlePT: 'Série Disparo',
     titleEN: 'Disparo Series',
     year: '2026',
-    descPT: 'A série Disparo investiga as relações entre identidade, memória, enraizamento e violência a partir da realidade amazônica. Inspiradas pelo impacto do garimpo ilegal e da grilagem sobre os povos indígenas, as esculturas em cerâmica transformam a argila em vestígios simbólicos de corpos e territórios feridos. As marcas do gesto, a materialidade do barro e o contraste entre esmaltes preto e branco evocam cicatrizes, contaminação e resistência, propondo uma reflexão sobre a permanência da memória ancestral diante da destruição ambiental e humana.',
-    descEN: 'The Disparo series investigates the relationships between identity, memory, rootedness and violence from the Amazonian reality. Inspired by the impact of illegal mining and land-grabbing on indigenous peoples, the ceramic sculptures transform clay into symbolic vestiges of wounded bodies and territories. The marks of gesture, the materiality of clay, and the contrast between black and white glazes evoke scars, contamination and resistance, proposing a reflection on the permanence of ancestral memory in the face of environmental and human destruction.',
+    descPT: 'Na série Disparo, Jorge Feitosa trabalha a cerâmica esmaltada a partir de questões relacionadas à violência ambiental e aos conflitos territoriais na Amazônia. O contraste entre superfícies claras e escuras, os volumes e as marcas de modelagem participam da construção das esculturas. A série associa essas decisões formais à memória de corpos e territórios afetados pelo garimpo ilegal e pela grilagem, sem converter a experiência de outras comunidades em representação literal.',
+    descEN: 'In the Disparo series, Jorge Feitosa uses glazed ceramics to address environmental violence and territorial conflict in the Amazon. Contrasts between light and dark surfaces, sculptural volumes and modelling marks shape the works. The series relates these formal choices to the memory of bodies and territories affected by illegal mining and land grabbing, without claiming to represent the experiences of other communities literally.',
     dimensions: 'Dimensões variadas',
     medium: 'Cerâmica esmaltada',
     images: ['/disparo1.jpeg', '/disparo2.jpeg', '/disparo3.jpeg'],
@@ -45,8 +45,8 @@ const obras: Obra[] = [
     titlePT: 'Os que habitam o silêncio',
     titleEN: 'Those Who Inhabit Silence',
     year: '2026',
-    descPT: 'Nas máscaras O Guardião, Eco do Abismo e Observador Silencioso, Jorge Feitosa explora a potência expressiva da argila por meio de uma manipulação direta e vigorosa do barro, preservando em suas superfícies os gestos do fazer. Associadas a uma prática milenar, essas formas entram em confluência com suportes estruturais e um dispositivo sonoro que deslocam sua leitura para um território híbrido, entre o ancestral e o tecnológico. O assobio que atravessa o espaço expositivo surpreende o visitante e intensifica esse estranhamento, oscilando entre sopro e ruído, presença e máquina. As obras aproximam diferentes temporalidades sem opô-las, sugerindo que técnicas ancestrais e tecnologias contemporâneas coexistem como dimensões de uma mesma experiência poética.',
-    descEN: 'In the masks O Guardião, Eco do Abismo and Observador Silencioso, Jorge Feitosa explores the expressive power of clay through a direct and vigorous manipulation of the material, preserving the gestures of making on their surfaces. Associated with a millenary practice, these forms converge with structural supports and a sound device that shift their reading to a hybrid territory, between the ancestral and the technological. The whistle that crosses the exhibition space surprises the visitor and intensifies this strangeness, oscillating between breath and noise, presence and machine. The works bring different temporalities together without opposing them, suggesting that ancestral techniques and contemporary technologies coexist as dimensions of the same poetic experience.',
+    descPT: 'Em Os que habitam o silêncio, as máscaras modeladas em cerâmica conservam marcas do trabalho manual. As peças apresentam suportes de madeira e outros materiais; uma delas incorpora elementos sonoros. A combinação desloca a leitura das máscaras para além de sua forma escultórica e introduz uma dimensão de presença, escuta e percepção do espaço. A série explora a continuidade de procedimentos manuais em obras que também recorrem a dispositivos contemporâneos.',
+    descEN: 'In Os que habitam o silêncio, ceramic masks retain traces of the modelling process. The pieces incorporate wooden supports and other materials; one also includes sound elements. This combination extends the works beyond their sculptural form and introduces questions of presence, listening and spatial perception. The series explores the continuation of manual processes in works that also make use of contemporary devices.',
     dimensions: 'Dimensões variadas',
     medium: 'Cerâmica',
     images: ['/mascaras1.jpeg', '/mascaras2.jpeg', '/mascaras3.jpeg'],
@@ -81,8 +81,8 @@ const obras: Obra[] = [
     titlePT: 'Kintsugi',
     titleEN: 'Kintsugi',
     year: '2024',
-    descPT: 'Kintsugi (2024) emerge do encontro entre memória, matéria e reparação. A série reúne esculturas construídas a partir de ossos de peixes nativos da Amazônia, madeira e folhas de ouro, apropriando-se do nome da técnica japonesa de restauração de cerâmicas quebradas para deslocar seu sentido em direção ao território amazônico. Ao recompor fragmentos de um corpo que já existiu, as obras transformam vestígios em permanência e atribuem novo valor ao que foi descartado. A pesquisa parte de memórias da minha infância em Porto Velho (RO), durante o auge do garimpo no Rio Madeira, e da compreensão posterior dos impactos da exploração do ouro sobre os rios, as populações ribeirinhas e os povos indígenas, cuja sobrevivência depende diretamente desses ecossistemas. O ouro, símbolo histórico de riqueza, torna-se aqui um elemento de tensão, enquanto as esculturas em madeira evocam a devastação da floresta impulsionada pela expansão da agropecuária. Acondicionadas em caixas de madeira que remetem simultaneamente a vitrines de museus de história natural e relicários, as obras apresentam esses fragmentos como testemunhos de um território em permanente disputa, propondo uma reflexão sobre memória, perda e resistência na Amazônia.',
-    descEN: 'Kintsugi (2024) emerges from the encounter between memory, matter and repair. The series brings together sculptures built from bones of Amazonian native fish, wood and gold leaf, appropriating the name of the Japanese technique of restoring broken ceramics to shift its meaning toward the Amazonian territory. By recomposing fragments of a body that once existed, the works transform vestiges into permanence and attribute new value to what was discarded. The research departs from memories of childhood in Porto Velho (RO), during the height of gold mining on the Madeira River, and from the subsequent understanding of the impacts of gold extraction on rivers, riverside communities and indigenous peoples, whose survival depends directly on these ecosystems. Gold, a historical symbol of wealth, becomes here an element of tension, while the wooden sculptures evoke the devastation of the forest driven by the expansion of agribusiness.',
+    descPT: 'A série Kintsugi (2024) reúne esculturas feitas com ossos de peixes amazônicos, madeira e aplicações de folha de ouro. O título remete à técnica japonesa de reparação de cerâmicas, aqui retomada como referência conceitual, sem reproduzir necessariamente seu procedimento. Parte das obras é apresentada em caixas de madeira e vidro. A pesquisa se relaciona às memórias de infância de Jorge Feitosa em Porto Velho e aos impactos da extração de ouro sobre o Rio Madeira e suas populações. A justaposição de fragmentos ósseos e ouro convida a reconsiderar o valor atribuído à matéria descartada, ao mesmo tempo que aponta para conflitos ambientais e econômicos associados ao território amazônico.',
+    descEN: 'Kintsugi (2024) comprises sculptures made with Amazonian fish bones, wood and applied gold leaf. Its title refers to the Japanese practice of repairing broken ceramics, invoked here as a conceptual reference rather than necessarily as a technical procedure. Some works are displayed in wood-and-glass cases. The research draws on Jorge Feitosa\'s childhood memories of Porto Velho and on the effects of gold extraction on the Madeira River and its communities. The juxtaposition of bone fragments and gold invites a reconsideration of how discarded material is valued, while drawing attention to the environmental and economic conflicts associated with the Amazon region.',
     dimensions: 'Dimensões variadas',
     medium: 'Técnicas mistas',
     images: ['/kintsugi1.jpeg', '/kintsugi2.jpeg', '/kintsugi3.jpeg'],
@@ -130,7 +130,7 @@ function PhotoSlot({
         <div className="aspect-[4/5] overflow-hidden bg-gray-100">
           <img
             src={src}
-            alt={'Foto ' + String(index + 1)}
+            alt={piece ? (lang === 'pt' ? `${piece.titlePT}, obra de Jorge Feitosa` : `${piece.titleEN}, artwork by Jorge Feitosa`) : (lang === 'pt' ? `Registro da série de Jorge Feitosa, imagem ${index + 1}` : `Jorge Feitosa series documentation, image ${index + 1}`)}
             className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
             loading="lazy"
           />
@@ -172,7 +172,7 @@ export default function Portfolio({ currentLang }: PortfolioProps) {
   }[currentLang];
 
   return (
-    <section id="portfolio" className="relative w-full bg-white py-24 md:py-32">
+    <section id="portfolio" className="relative w-full bg-white py-16 md:py-28">
       <h2 className="sr-only">{t.label} — Jorge Feitosa</h2>
 
       {/* Header */}
@@ -184,7 +184,7 @@ export default function Portfolio({ currentLang }: PortfolioProps) {
       </div>
 
       {/* Works list */}
-      <div className="max-w-7xl mx-auto px-6 md:px-12 space-y-28">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 space-y-20 md:space-y-28">
         {obras.map((obra, obraIdx) => (
           <motion.div
             key={obra.id}
