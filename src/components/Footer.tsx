@@ -62,6 +62,14 @@ export default function Footer({ currentLang }: FooterProps) {
           >
             {currentLang === 'pt' ? 'CONTATO' : 'CONTACT'}
           </button>
+          <a
+            href="https://www.acervojorgefeitosa.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-clay-black/60 transition-colors underline-offset-4 hover:underline"
+          >
+            ACERVO JORGE FEITOSA
+          </a>
         </div>
 
         {/* Right segment - copyrights policies */}
