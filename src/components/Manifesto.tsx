@@ -21,7 +21,7 @@ export default function Manifesto({ currentLang }: ManifestoProps) {
     <section
       ref={sectionRef}
       id="about"
-      className="relative w-full min-h-screen py-24 md:py-36 flex flex-col justify-center items-center bg-clay-dark px-6 md:px-12 text-center"
+      className="relative w-full py-24 md:py-32 min-h-[70vh] md:min-h-screen flex flex-col justify-center items-center bg-clay-dark px-6 md:px-12 text-center"
     >
       {/* SEO Title - Hidden from visual frame, fully indexable by search bots */}
       <h2 id="seo-about-title" className="sr-only">

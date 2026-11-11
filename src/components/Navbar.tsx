@@ -34,7 +34,7 @@ export default function Navbar({ currentLang, setLang, activeSection }: NavbarPr
     { id: 'biography', label: t.biography },
     { id: 'exhibitions', label: t.exhibitions },
     { id: 'process', label: t.process },
-    { id: 'testimonials', label: currentLang === 'pt' ? 'SOBRE ELE' : 'ABOUT HIM' },
+    { id: 'testimonials', label: currentLang === 'pt' ? 'TEXTOS SOBRE O ARTISTA' : 'WRITING ON THE ARTIST' },
     { id: 'contact', label: t.contact },
   ];
 

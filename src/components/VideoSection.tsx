@@ -14,12 +14,12 @@ export default function VideoSection({ currentLang }: VideoSectionProps) {
     <section
       ref={ref}
       id="video"
-      className="relative w-full bg-white py-24 md:py-36 px-6 md:px-12 border-t border-gray-100 overflow-hidden"
+      className="relative w-full bg-white py-16 md:py-28 px-6 md:px-12 border-t border-gray-100 overflow-hidden"
     >
       <div className="max-w-7xl mx-auto">
 
         {/* Cabeçalho */}
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-16 md:mb-20 gap-6">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-10 md:mb-16 gap-6">
           <div>
             <motion.span
               initial={{ opacity: 0, y: 10 }}
@@ -45,8 +45,8 @@ export default function VideoSection({ currentLang }: VideoSectionProps) {
             className="font-sans text-sm text-black/50 max-w-xs leading-relaxed md:text-right"
           >
             {currentLang === 'pt'
-              ? 'Matéria, gesto e território em confluência.'
-              : 'Matter, gesture and territory in confluence.'}
+              ? 'O corpo, a ação e seus registros na pesquisa do artista.'
+              : 'The body, action and their documentation in the artist’s practice.'}
           </motion.p>
         </div>
 
@@ -80,13 +80,13 @@ export default function VideoSection({ currentLang }: VideoSectionProps) {
             <div className="flex flex-col justify-center gap-8 max-w-lg">
               <p className="font-sans text-sm text-black leading-relaxed">
                 {currentLang === 'pt'
-                  ? 'O artista é o primeiro suporte. Antes da tela, antes da argila, antes de qualquer superfície: o corpo entra em contato com a matéria e inaugura a obra.'
-                  : 'The artist is the first support. Before the canvas, before the clay, before any surface: the body makes contact with matter and inaugurates the work.'}
+                  ? 'Em suas performances, Jorge Feitosa utiliza o próprio corpo como meio de investigação. O contato com a matéria participa da construção das ações e de seus registros.'
+                  : 'In his performances, Jorge Feitosa uses his body as a means of inquiry. Contact with materials shapes both the actions and their documentation.'}
               </p>
               <p className="font-sans text-sm text-black/60 leading-relaxed">
                 {currentLang === 'pt'
-                  ? 'Em Feitosa, a performance não é representação — é inscrição. O gesto deixa marca não apenas na matéria, mas no próprio artista.'
-                  : 'In Feitosa, performance is not representation — it is inscription. The gesture leaves a mark not only on matter, but on the artist himself.'}
+                  ? 'Fotografia e vídeo permitem acompanhar os gestos e a relação entre movimento, espaço e superfície. Esses registros integram a documentação de sua produção artística.'
+                  : 'Photography and video document the gestures and the relationship between movement, space and surface. These records form part of the documentation of his artistic practice.'}
               </p>
               <div className="pt-2 border-t border-black/10">
                 <span className="font-mono text-[9px] text-black/30 tracking-widest uppercase">

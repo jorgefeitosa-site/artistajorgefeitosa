@@ -27,16 +27,16 @@ export default function Exhibitions({ currentLang }: ExhibitionsProps) {
   const cities: MapTargetCity[] = [
     {
       id: 'porto-velho',
-      name: 'Porto Velho (Nascimento & Matéria)',
+      name: 'Porto Velho',
       coords: { x: 22, y: 70 },
       latLon: '08° 45′ S, 63° 54′ W',
       eventsPT: [
-        'Berço de Nascimento e Origem Primordial.',
-        'As frentes barrentas do Rio Madeira fornecem a argila vermelha de onde surgem suas séries mais viscerais.'
+        'Cidade natal do artista, às margens do Rio Madeira.',
+        'O Rio Madeira é uma referência territorial e uma fonte de argila utilizada em sua pesquisa.'
       ],
       eventsEN: [
-        'Cradle of Birth & Primordial Source.',
-        'The muddy banks of the Madeira River provide the sacred red clay from which his most visceral series emerge.'
+        'The birthplace of Jorge Feitosa, on the Madeira River.',
+        'The Madeira River is both a geographical reference and a source of clay used in his work.'
       ]
     },
     {
@@ -44,8 +44,8 @@ export default function Exhibitions({ currentLang }: ExhibitionsProps) {
       name: 'Paris',
       coords: { x: 48, y: 32 },
       latLon: '48° 51′ N, 02° 21′ E',
-      eventsPT: ['2025 · Exposição Individual: "Viagem – Matéria, rito e memória ancestral" na Galerie.'],
-      eventsEN: ['2025 · Solo Exhibition: "Journey – Matter, rite, and ancestral memory" at Gallery.']
+      eventsPT: ['2025 · Exposição Individual: "Viagem – Matéria, rito e memória ancestral" em Paris.'],
+      eventsEN: ['2025 · Solo Exhibition: "Journey – Matter, rite, and ancestral memory" in Paris.']
     },
     {
       id: 'havana',
@@ -61,15 +61,15 @@ export default function Exhibitions({ currentLang }: ExhibitionsProps) {
       coords: { x: 33, y: 78 },
       latLon: '23° 33′ S, 46° 38′ W',
       eventsPT: [
-        'Ateliê de Criação Principal no Brasil.',
+        'Cidade onde o artista desenvolve parte de sua produção.',
         '2016 · Exposição Individual: "Lágrimas de Ouro".',
-        '2025 · Mostra: "Presença Permeável" na Praça das Artes.',
+        '2017 · "Presença Permeável" na Praça das Artes.',
         '2022 · Mostra: "16ª Verbo Performance" na Galeria Vermelho.'
       ],
       eventsEN: [
-        'Primary Creative Studio inside Brazil.',
+        'The city where the artist develops part of his practice.',
         '2016 · Solo Exhibition: "Tears of Gold".',
-        '2025 · Collective Showcase: "Permeable Presence" at Praça das Artes.',
+        '2017 · "Presença Permeável" at Praça das Artes.',
         '2022 · Showcase: "16th Verbo Performance" at Vermelho Gallery.'
       ]
     },
@@ -79,12 +79,12 @@ export default function Exhibitions({ currentLang }: ExhibitionsProps) {
       coords: { x: 36, y: 76 },
       latLon: '22° 54′ S, 43° 11′ W',
       eventsPT: [
-        'Acervo Oficial: Museu de Arte do Rio (MAR).',
+        'Referência institucional: Museu de Arte do Rio (MAR).',
         '2024 · Feira de Arte: "ArtRio — Brasil Contemporâneo".',
         '2024 · Exposição Externa: "Jardim das Esculturas" na Marina da Glória.'
       ],
       eventsEN: [
-        'Permanent Collection: Rio Art Museum (MAR).',
+        'Institutional collection: Museu de Arte do Rio (MAR).',
         '2024 · Contemporary Art Fair: "ArtRio — Contemporary Brazil".',
         '2024 · Open-air Exhibition: "Sculptures Garden" at Marina da Glória.'
       ]
@@ -97,22 +97,8 @@ export default function Exhibitions({ currentLang }: ExhibitionsProps) {
       eventsPT: ['Acervo Permanente: MUnA – Museu Universitário de Arte / MG.'],
       eventsEN: ['Permanent Collection: MUnA – University Art Museum / MG.']
     },
-    {
-      id: 'recife',
-      name: 'Recife / PE',
-      coords: { x: 38, y: 60 },
-      latLon: '08° 03′ S, 34° 53′ W',
-      eventsPT: ['Presença artística e exposições no Nordeste brasileiro.'],
-      eventsEN: ['Artistic presence and exhibitions in northeastern Brazil.']
-    },
-    {
-      id: 'san-juan',
-      name: 'San Juan / Puerto Rico',
-      coords: { x: 31, y: 49 },
-      latLon: '18° 27′ N, 66° 06′ W',
-      eventsPT: ['Participação em projetos e intercâmbios artísticos no Caribe.'],
-      eventsEN: ['Participation in artistic projects and exchanges in the Caribbean.']
-    },
+
+
     {
       id: 'veneza',
       name: 'Veneza / Itália',
@@ -137,7 +123,7 @@ export default function Exhibitions({ currentLang }: ExhibitionsProps) {
     <section
       ref={sectionRef}
       id="exhibitions"
-      className="relative w-full bg-white py-24 md:py-36 px-6 md:px-12 select-text"
+      className="relative w-full bg-white py-20 md:py-28 px-6 md:px-12 select-text"
     >
       <h2 className="sr-only">{t.seoTitle}</h2>
 
@@ -152,7 +138,7 @@ export default function Exhibitions({ currentLang }: ExhibitionsProps) {
             {t.title}
           </h3>
           <p className="mt-4 font-sans text-xs sm:text-sm text-clay-black font-mono tracking-wider">
-            {currentLang === 'pt' ? 'Toque nos pontos brilhantes para ver os detalhes da presença' : 'Click the glowing nodes to view artistic presence details'}
+            {currentLang === 'pt' ? 'Selecione uma cidade para consultar os registros de trajetória' : 'Select a city to explore the exhibition history'}
           </p>
         </div>
 
