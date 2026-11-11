@@ -46,7 +46,7 @@ export default function VideoSection({ currentLang }: VideoSectionProps) {
           >
             {currentLang === 'pt'
               ? 'O corpo, a ação e seus registros na pesquisa do artista.'
-              : 'The body, action and their documentation in the artist's practice.'}
+              : 'The body, action and their documentation in the artist’s practice.'}
           </motion.p>
         </div>
 
