@@ -84,6 +84,25 @@ export default function Footer({ currentLang }: FooterProps) {
         </div>
 
       </div>
+
+      {/* Páginas editoriais com HTML completo e URLs próprias para consulta. */}
+      <nav
+        aria-label={currentLang === 'pt' ? 'Páginas editoriais' : 'Editorial pages'}
+        className="max-w-7xl mx-auto mt-10 pt-6 border-t border-clay-light/35 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-[10px] font-mono uppercase tracking-[0.12em]"
+      >
+        <span className="text-clay-black/55">
+          {currentLang === 'pt' ? 'Leitura e pesquisa' : 'Further reading'}
+        </span>
+        <a className="hover:underline underline-offset-4" href={currentLang === 'pt' ? '/artista/' : '/en/artist/'}>
+          {currentLang === 'pt' ? 'Biografia completa' : 'Full biography'}
+        </a>
+        <a className="hover:underline underline-offset-4" href={currentLang === 'pt' ? '/obras/' : '/en/works/'}>
+          {currentLang === 'pt' ? 'Séries e obras' : 'Works and series'}
+        </a>
+        <a className="hover:underline underline-offset-4" href={currentLang === 'pt' ? '/exposicoes/' : '/en/exhibitions/'}>
+          {currentLang === 'pt' ? 'Exposições e acervos' : 'Exhibitions and collections'}
+        </a>
+      </nav>
     </footer>
   );
 }
