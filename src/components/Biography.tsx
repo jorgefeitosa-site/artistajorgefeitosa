@@ -9,6 +9,21 @@ interface BiographyProps {
 
 export default function Biography({ currentLang }: BiographyProps) {
   const t = bioTranslations[currentLang];
+  const acervo = currentLang === 'pt'
+    ? {
+        eyebrow: 'PESQUISA E CURADORIA',
+        title: 'Acervo Jorge Feitosa',
+        description: 'Em paralelo à produção autoral, Jorge Feitosa conduz com Fábio Garcia o Acervo Jorge Feitosa, dedicado à pesquisa e à curadoria de objetos vintage, design histórico e artes decorativas. O catálogo do Acervo reúne peças de diferentes autores e manufaturas em uma plataforma distinta deste portfólio artístico.',
+        website: 'Conhecer o Acervo',
+        instagram: 'Instagram do Acervo',
+      }
+    : {
+        eyebrow: 'RESEARCH AND CURATORSHIP',
+        title: 'Acervo Jorge Feitosa',
+        description: 'Alongside his artistic practice, Jorge Feitosa runs Acervo Jorge Feitosa with Fábio Garcia. The project researches and curates vintage objects, historical design and decorative arts. Its catalogue presents objects by different makers and manufacturers on a platform separate from this artist portfolio.',
+        website: 'Explore the Acervo',
+        instagram: 'Acervo on Instagram',
+      };
   const sectionRef = useRef<HTMLDivElement>(null);
   
   // Checking in view
@@ -80,6 +95,37 @@ export default function Biography({ currentLang }: BiographyProps) {
               <p>{t.p6}</p>
               <p>{t.p7}</p>
             </motion.div>
+
+            {/* Projeto de curadoria relacionado, distinto da produção autoral */}
+            <div className="mt-10 max-w-xl border-t border-clay-black/20 pt-8">
+              <span className="block font-mono text-[10px] uppercase tracking-[0.2em] text-clay-black/65 mb-3">
+                {acervo.eyebrow}
+              </span>
+              <h4 className="font-serif text-xl md:text-2xl text-clay-black font-light mb-4">
+                {acervo.title}
+              </h4>
+              <p className="font-sans text-sm text-clay-black leading-relaxed">
+                {acervo.description}
+              </p>
+              <div className="flex flex-wrap gap-x-6 gap-y-3 mt-5 text-xs font-mono tracking-wide">
+                <a
+                  href="https://www.acervojorgefeitosa.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline underline-offset-4 hover:opacity-60 transition-opacity"
+                >
+                  {acervo.website}
+                </a>
+                <a
+                  href="https://www.instagram.com/acervo.jorgefeitosa/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline underline-offset-4 hover:opacity-60 transition-opacity"
+                >
+                  {acervo.instagram}
+                </a>
+              </div>
+            </div>
           </div>
 
           {/* RIGHT COLUMN: Interactive Visual Timeline */}
