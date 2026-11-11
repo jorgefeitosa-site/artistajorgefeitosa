@@ -35,7 +35,7 @@ export default function Exhibitions({ currentLang }: ExhibitionsProps) {
         'O Rio Madeira é uma referência territorial e uma fonte de argila utilizada em sua pesquisa.'
       ],
       eventsEN: [
-        'The artist's birthplace on the Madeira River.',
+        'The birthplace of Jorge Feitosa, on the Madeira River.',
         'The Madeira River is both a geographical reference and a source of clay used in his work.'
       ]
     },
@@ -138,7 +138,7 @@ export default function Exhibitions({ currentLang }: ExhibitionsProps) {
             {t.title}
           </h3>
           <p className="mt-4 font-sans text-xs sm:text-sm text-clay-black font-mono tracking-wider">
-            {currentLang === 'pt' ? 'Selecione uma cidade para consultar os registros de trajetória' : 'Select a city to view records of the artist's trajectory'}
+            {currentLang === 'pt' ? 'Selecione uma cidade para consultar os registros de trajetória' : 'Select a city to explore the exhibition history'}
           </p>
         </div>
 
