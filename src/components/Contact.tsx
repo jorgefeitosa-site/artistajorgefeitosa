@@ -15,8 +15,8 @@ export default function Contact({ currentLang }: ContactProps) {
     pt: {
       seoTitle: 'Contato — Jorge Feitosa · Obras Disponíveis',
       title: 'CONTATO & EXPOSIÇÕES',
-      headline: 'Inquérito e Diálogo',
-      infoText: 'Para aquisição de obras, projetos expositivos ou residências artísticas, entre em contato através do e-mail.',
+      headline: 'Contato profissional',
+      infoText: 'Para informações sobre obras, propostas de exposições, projetos e residências artísticas, escreva para o contato abaixo.',
       emailLabel: 'E-mail profissional',
       whatsappBtn: 'Falar pelo WhatsApp',
       instaBtn: 'Seguir no Instagram',
@@ -25,8 +25,8 @@ export default function Contact({ currentLang }: ContactProps) {
     en: {
       seoTitle: 'Contact — Jorge Feitosa · Available Artworks',
       title: 'CONTACT & EXHIBITIONS',
-      headline: 'Inquiry & Dialogue',
-      infoText: 'For artwork acquisitions, exhibition projects, or artist residencies, please get in touch via email.',
+      headline: 'Professional Enquiries',
+      infoText: 'For information about artworks, exhibition proposals, projects and artist residencies, please use the contact details below.',
       emailLabel: 'Professional Email',
       whatsappBtn: 'Message on WhatsApp',
       instaBtn: 'Follow on Instagram',
@@ -38,7 +38,7 @@ export default function Contact({ currentLang }: ContactProps) {
     <section
       ref={sectionRef}
       id="contact"
-      className="relative w-full bg-white py-28 md:py-40 px-6 md:px-12 select-text overflow-hidden border-t border-clay-light/25 animate-fadeIn"
+      className="relative w-full bg-white py-20 md:py-32 px-6 md:px-12 select-text overflow-hidden border-t border-clay-light/25 animate-fadeIn"
     >
       <h2 className="sr-only">{t.seoTitle}</h2>
 
