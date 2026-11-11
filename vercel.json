@@ -3,5 +3,58 @@
   "outputDirectory": "dist",
   "installCommand": "npm install",
   "framework": "vite",
-  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
+  "rewrites": [
+    {
+      "source": "/artista",
+      "destination": "/artista/index.html"
+    },
+    {
+      "source": "/artista/",
+      "destination": "/artista/index.html"
+    },
+    {
+      "source": "/obras",
+      "destination": "/obras/index.html"
+    },
+    {
+      "source": "/obras/",
+      "destination": "/obras/index.html"
+    },
+    {
+      "source": "/exposicoes",
+      "destination": "/exposicoes/index.html"
+    },
+    {
+      "source": "/exposicoes/",
+      "destination": "/exposicoes/index.html"
+    },
+    {
+      "source": "/en/artist",
+      "destination": "/en/artist/index.html"
+    },
+    {
+      "source": "/en/artist/",
+      "destination": "/en/artist/index.html"
+    },
+    {
+      "source": "/en/works",
+      "destination": "/en/works/index.html"
+    },
+    {
+      "source": "/en/works/",
+      "destination": "/en/works/index.html"
+    },
+    {
+      "source": "/en/exhibitions",
+      "destination": "/en/exhibitions/index.html"
+    },
+    {
+      "source": "/en/exhibitions/",
+      "destination": "/en/exhibitions/index.html"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
 }
