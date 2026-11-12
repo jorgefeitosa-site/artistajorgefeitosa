@@ -285,6 +285,13 @@ export const soloExhibitions: ExhibitionItem[] = [
 export const groupExhibitions: ExhibitionItem[] = [
   {
     year: '2025',
+    titlePT: '"Chamar o Rio" · Christal Galeria',
+    titleEN: '"Chamar o Rio" · Christal Galeria',
+    locationPT: 'Recife, Pernambuco, Brasil · Curadoria: Paula Borghi',
+    locationEN: 'Recife, Pernambuco, Brazil · Curator: Paula Borghi'
+  },
+  {
+    year: '2025',
     titlePT: 'Mappa Dell\'arte Nuova – Imago · Fondazione Giorgio Cini',
     titleEN: 'Mappa Dell\'arte Nuova – Imago · Giorgio Cini Foundation',
     locationPT: 'Veneza, Itália',
