@@ -58,7 +58,7 @@ export default function Exhibitions({ currentLang }: ExhibitionsProps) {
     {
       id: 'sao-paulo',
       name: 'São Paulo',
-      coords: { x: 33, y: 78 },
+      coords: { x: 35, y: 85 },
       latLon: '23° 33′ S, 46° 38′ W',
       eventsPT: [
         'Cidade onde o artista desenvolve parte de sua produção.',
@@ -76,7 +76,7 @@ export default function Exhibitions({ currentLang }: ExhibitionsProps) {
     {
       id: 'rio-de-janeiro',
       name: 'Rio de Janeiro',
-      coords: { x: 36, y: 76 },
+      coords: { x: 43, y: 77 },
       latLon: '22° 54′ S, 43° 11′ W',
       eventsPT: [
         'Referência institucional: Museu de Arte do Rio (MAR).',
@@ -90,9 +90,23 @@ export default function Exhibitions({ currentLang }: ExhibitionsProps) {
       ]
     },
     {
+      id: 'recife',
+      name: 'Recife',
+      coords: { x: 44, y: 60 },
+      latLon: '08° 03′ S, 34° 52′ W',
+      eventsPT: [
+        '2025 · Participação na exposição coletiva "Chamar o Rio", Christal Galeria, Recife (PE).',
+        'Curadoria: Paula Borghi. A mostra reúne artistas latino-americanos em torno dos direitos dos rios.'
+      ],
+      eventsEN: [
+        '2025 · Participation in the group exhibition "Chamar o Rio", Christal Galeria, Recife, Brazil.',
+        'Curator: Paula Borghi. The exhibition brings together Latin American artists addressing the rights of rivers.'
+      ]
+    },
+    {
       id: 'uberlandia',
       name: 'Uberlândia',
-      coords: { x: 31, y: 74 },
+      coords: { x: 30, y: 73 },
       latLon: '18° 55′ S, 48° 16′ W',
       eventsPT: ['Acervo Permanente: MUnA – Museu Universitário de Arte / MG.'],
       eventsEN: ['Permanent Collection: MUnA – University Art Museum / MG.']
@@ -111,12 +125,13 @@ export default function Exhibitions({ currentLang }: ExhibitionsProps) {
 
   // Creative vector flow routes connecting raw material source with centers
   const routes = [
-    { from: 'porto-velho', to: 'sao-paulo', d: "M 220,350 Q 275,370 330,390" },
+    { from: 'porto-velho', to: 'sao-paulo', d: "M 220,350 Q 290,405 350,425" },
     { from: 'porto-velho', to: 'havana', d: "M 220,350 Q 240,310 260,270" },
+    { from: 'porto-velho', to: 'recife', d: "M 220,350 Q 330,300 440,300" },
     { from: 'havana', to: 'paris', d: "M 260,270 Q 370,215 480,160" },
-    { from: 'paris', to: 'rio-de-janeiro', d: "M 480,160 Q 420,270 360,380" },
-    { from: 'sao-paulo', to: 'rio-de-janeiro', d: "M 330,390 Q 345,385 360,380" },
-    { from: 'sao-paulo', to: 'uberlandia', d: "M 330,390 Q 320,380 310,370" }
+    { from: 'paris', to: 'rio-de-janeiro', d: "M 480,160 Q 445,275 430,385" },
+    { from: 'sao-paulo', to: 'rio-de-janeiro', d: "M 350,425 Q 390,395 430,385" },
+    { from: 'sao-paulo', to: 'uberlandia', d: "M 350,425 Q 325,390 300,365" }
   ];
 
   return (
@@ -246,7 +261,7 @@ export default function Exhibitions({ currentLang }: ExhibitionsProps) {
                   
                   {/* Pin core button representing map coordinates */}
                   <button
-                    className={`relative w-5 w-5 rounded-full border border-clay-black flex items-center justify-center cursor-pointer shadow-xl transition-all duration-300 ${
+                    className={`relative w-5 h-5 rounded-full border border-clay-black flex items-center justify-center cursor-pointer shadow-xl transition-all duration-300 ${city.id === 'sao-paulo' ? 'ring-2 ring-clay-black/20' : ''} ${
                       isActive 
                         ? 'scale-135 bg-clay-black text-clay-black' 
                         : isSourceNode 
@@ -261,7 +276,7 @@ export default function Exhibitions({ currentLang }: ExhibitionsProps) {
                   </button>
 
                   {/* Elegant floating metadata label under node */}
-                  <span className="absolute top-6 left-1/2 -translate-x-1/2 font-mono text-[9px] text-clay-black tracking-widest uppercase bg-white/80 px-1.5 py-0.5 whitespace-nowrap border border-clay-light/20 select-text">
+                  <span className={`absolute ${city.id === 'uberlandia' ? 'bottom-7' : 'top-6'} left-1/2 -translate-x-1/2 font-mono tracking-widest uppercase whitespace-nowrap select-text ${city.id === 'sao-paulo' ? 'z-30 text-[10px] font-semibold text-clay-black bg-white px-2.5 py-1 border border-clay-black/40 shadow-sm' : 'text-[9px] text-clay-black bg-white/80 px-1.5 py-0.5 border border-clay-light/20'}`}>
                     {city.id === 'porto-velho' ? city.name.split(' (')[0].toUpperCase() + ' ✦' : city.name.split('/')[0].trim().toUpperCase()}
                   </span>
 
