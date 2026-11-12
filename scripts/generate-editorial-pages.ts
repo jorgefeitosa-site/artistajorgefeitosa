@@ -48,6 +48,8 @@ const translations = {
     acervoText: 'Em paralelo à produção autoral, Jorge Feitosa conduz com Fábio Garcia o Acervo Jorge Feitosa, dedicado à pesquisa e à curadoria de objetos vintage, design histórico e artes decorativas. O Acervo é uma iniciativa distinta deste portfólio artístico.',
     acervoSite: 'Site do Acervo', acervoInstagram: 'Instagram do Acervo',
     viewWork: 'Fotografia de obra da série ',
+    references: 'Registros externos da trajetória',
+    referencesIntro: 'Publicações de galerias e veículos editoriais que identificam o artista e documentam sua atuação.',
   },
   en: {
     home: 'Home', bio: 'Biography', works: 'Work', exhibitions: 'Exhibitions',
@@ -66,6 +68,8 @@ const translations = {
     acervoText: 'Alongside his artistic practice, Jorge Feitosa runs Acervo Jorge Feitosa with Fábio Garcia. The initiative researches and curates vintage objects, historical design and decorative arts, independently of this artist portfolio.',
     acervoSite: 'Acervo website', acervoInstagram: 'Acervo on Instagram',
     viewWork: 'Photograph of artwork from the series ',
+    references: 'Independent records of the artist\'s career',
+    referencesIntro: 'Gallery records and editorial coverage identifying the artist and documenting his practice.',
   },
 };
 
@@ -97,6 +101,24 @@ function acervoPanel(lang) {
     '<a href="https://www.instagram.com/acervo.jorgefeitosa/" rel="noopener noreferrer">' + esc(t.acervoInstagram) + '</a>' +
     '</div></aside>';
 }
+const artistReferences = [
+  {
+    url: 'https://www.bolsadearte.com/oparalelo/jorge-feitosa-na-gal-vilanova-2',
+    pt: '2018 · Bolsa de Arte / O Paralelo — exposição Lágrimas de Ouro na Galeria VilaNova',
+    en: '2018 · Bolsa de Arte / O Paralelo — Lágrimas de Ouro exhibition at Galeria VilaNova'
+  },
+  {
+    url: 'https://galeriavermelho.com.br/verbo/16a-edicao/',
+    pt: '2022 · Galeria Vermelho — 16ª VERBO, Corpo Ocupa Espaço Diminuto I',
+    en: '2022 · Galeria Vermelho — 16th VERBO, Corpo Ocupa Espaço Diminuto I'
+  },
+  {
+    url: 'https://jc.uol.com.br/social1/agenda/2025/10/04/chamar-o-rio-christal-galeria-abre-mostra-com-16-artistas-latino-americanos-sobre-direitos-dos-rios.html',
+    pt: '2025 · Jornal do Commercio — Chamar o Rio, Christal Galeria, Recife',
+    en: '2025 · Jornal do Commercio — Chamar o Rio, Christal Galeria, Recife'
+  }
+];
+
 function bioPage(lang) {
   const t = translations[lang];
   const bio = bioTranslations[lang];
@@ -110,6 +132,12 @@ function bioPage(lang) {
     '<section class="section"><h2>' + esc(t.bio) + '</h2>' + paragraphs + '</section>' +
     '<section class="section"><h2>' + esc(t.timeline) + '</h2>' +
     '<ol class="event-list">' + timeline + '</ol></section>' +
+    '<section class="section"><h2>' + esc(t.references) + '</h2>' +
+    el('p', t.referencesIntro) +
+    '<ul class="event-list">' + artistReferences.map(ref =>
+      '<li><a href="' + esc(ref.url) + '" target="_blank" rel="noopener noreferrer">' +
+      esc(lang === 'pt' ? ref.pt : ref.en) + '</a></li>').join('') +
+    '</ul></section>' +
     acervoPanel(lang);
 }
 function worksPage(lang) {
@@ -158,6 +186,28 @@ function htmlPage(page, lang) {
   const title = (page.kind === 'artist' ? t.bioTitle : page.kind === 'works' ? t.worksTitle : t.exhibitionsTitle);
   const description = (page.kind === 'artist' ? t.artistDesc : page.kind === 'works' ? t.worksDesc : t.exhibitionsDesc);
   const main = (page.kind === 'artist' ? bioPage(lang) : page.kind === 'works' ? worksPage(lang) : exhibitionsPage(lang));
+  const artistEntity = {
+    '@type': 'Person',
+    '@id': domain + '/#artist',
+    name: 'Jorge Feitosa',
+    alternateName: '@jorgefeitosa.artista',
+    url: domain + '/',
+    jobTitle: lang === 'pt' ? 'Artista visual' : 'Visual artist',
+    description: lang === 'pt'
+      ? 'Artista visual brasileiro nascido em Porto Velho, Rondônia, com pesquisa em performance, fotografia, escultura, pintura e vídeo.'
+      : 'Brazilian visual artist born in Porto Velho, Rondônia, working across performance, photography, sculpture, painting and video.',
+    disambiguatingDescription: lang === 'pt'
+      ? 'Artista visual natural de Porto Velho, Rondônia, cuja produção investiga corpo, território e materiais associados ao Rio Madeira e à Amazônia.'
+      : 'Visual artist from Porto Velho, Rondônia, whose practice explores the body, place and materials associated with the Madeira River and the Amazon.',
+    birthPlace: { '@type': 'Place', name: 'Porto Velho, Rondônia, Brasil' },
+    homeLocation: { '@type': 'Place', name: 'São Paulo, São Paulo, Brasil' },
+    image: domain + '/hero.jpeg',
+    sameAs: [
+      'https://www.instagram.com/jorgefeitosa.artista/',
+      'https://www.acervojorgefeitosa.com/jorge-feitosa-artista-visual/'
+    ],
+    affiliation: { '@id': domain + '/#acervo' }
+  };
   const schema = {
     '@context': 'https://schema.org',
     '@type': page.kind === 'artist' ? 'ProfilePage' : 'CollectionPage',
@@ -167,7 +217,7 @@ function htmlPage(page, lang) {
     about: { '@id': domain + '/#artist' },
     isPartOf: { '@id': domain + '/#website' },
     mainEntity: page.kind === 'artist'
-      ? { '@type': 'Person', '@id': domain + '/#artist', name: 'Jorge Feitosa', url: domain + '/' }
+      ? artistEntity
       : { '@id': domain + '/#artist' },
   };
   const json = JSON.stringify(schema).replace(/</g, '\\u003c');
