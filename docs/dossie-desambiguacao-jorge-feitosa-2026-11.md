@@ -1,3 +1,11 @@
+## Atualização de 12/11/2026 — identificador registrado pelo responsável
+
+Em conversa com a equipe responsável pelo site e o acervo, foram apresentadas capturas de tela do item Wikidata [Q142129894](https://www.wikidata.org/wiki/Q142129894), criado com o rótulo “Jorge Feitosa” e a descrição em inglês “Brazilian visual artist born in Porto Velho, Rondônia”. O responsável informou, em seguida, ter adicionado declarações e referências sobre profissão e local de nascimento, site oficial (`P856`) e Instagram (`P2003`). **A consulta automática ao estado atual do item e de suas referências não pôde ser concluída nesta revisão**; assim, não foram atestados individualmente os valores ou o estado editorial em 12/11/2026. A identidade no site do artista passou a apontar para `Q142129894` no campo `Person.sameAs`, com base nas capturas de tela e informações fornecidas pelo responsável. O item Wikidata é mantido pela comunidade e pode ser atualizado ou reavaliado independentemente deste site.
+
+O artista confirmou diretamente **1969** como ano de nascimento. Como havia divergência pública com bases que informavam 1970, não foi acrescentado `birthDate` ao JSON-LD nesta atualização. Recomenda-se solicitar a correção dos perfis externos, com base nos documentos biográficos e nos procedimentos das respectivas plataformas.
+
+---
+
 # Dossiê de desambiguação documental — Jorge Feitosa
 Data da pesquisa: 11 de novembro de 2026
 

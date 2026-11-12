@@ -204,7 +204,8 @@ function htmlPage(page, lang) {
     image: domain + '/hero.jpeg',
     sameAs: [
       'https://www.instagram.com/jorgefeitosa.artista/',
-      'https://www.acervojorgefeitosa.com/jorge-feitosa-artista-visual/'
+      'https://www.acervojorgefeitosa.com/jorge-feitosa-artista-visual/',
+      'https://www.wikidata.org/wiki/Q142129894'
     ],
     affiliation: { '@id': domain + '/#acervo' }
   };
