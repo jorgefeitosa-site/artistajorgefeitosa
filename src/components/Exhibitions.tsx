@@ -157,8 +157,19 @@ export default function Exhibitions({ currentLang }: ExhibitionsProps) {
           </p>
         </div>
 
+        {/* On mobile, retain the drawn map and allow horizontal exploration rather than hiding its markers. */}
+        <p className="md:hidden mb-3 font-mono text-[10px] tracking-wide text-clay-black">
+          {currentLang === 'pt'
+            ? 'Deslize o mapa para os lados e toque nas cidades para consultar os registros.'
+            : 'Swipe sideways across the map and tap a city to explore its history.'}
+        </p>
         {/* INTERACTIVE STYLIZED MAP BLOCK */}
-        <div className="relative w-full h-[360px] md:h-[520px] border border-clay-black/25 bg-clay-dark/30 bg-[linear-gradient(to_right,rgba(197,160,89,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(197,160,89,0.03)_1px,transparent_1px)] bg-[size:32px_32px] overflow-hidden mb-24 flex items-center justify-center p-2 select-none">
+        <div
+          className="relative w-full h-[400px] md:h-[520px] border border-clay-black/25 bg-clay-dark/30 bg-[linear-gradient(to_right,rgba(197,160,89,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(197,160,89,0.03)_1px,transparent_1px)] bg-[size:32px_32px] overflow-x-auto overflow-y-hidden md:overflow-hidden mb-4 md:mb-24 flex items-start md:items-center justify-start md:justify-center p-2 select-none overscroll-x-contain"
+          role="region"
+          aria-label={currentLang === 'pt' ? 'Cosmografia de Fluxos: mapa interativo' : 'Cosmography of Flows: interactive map'}
+        >
+          <div className="relative w-[760px] h-[380px] shrink-0 md:w-full md:h-full">
           
           {/* Subtle frame borders */}
           <div className="absolute top-2 left-2 w-4 h-4 border-t border-l border-clay-black/30"></div>
@@ -240,7 +251,7 @@ export default function Exhibitions({ currentLang }: ExhibitionsProps) {
           </div>
 
           {/* MAP PINS & TOOLTIPS */}
-          <div className="absolute inset-0 max-w-[1000px] h-[500px] mx-auto hidden md:block">
+          <div className="absolute inset-0 w-full h-full md:max-w-[1000px] md:h-[500px] mx-auto">
             {cities.map((city) => {
               const isActive = activeCity?.id === city.id;
               const isSourceNode = city.id === 'porto-velho';
@@ -250,8 +261,8 @@ export default function Exhibitions({ currentLang }: ExhibitionsProps) {
                   key={city.id}
                   style={{ left: `${city.coords.x}%`, top: `${city.coords.y}%` }}
                   className="absolute -translate-x-1/2 -translate-y-1/2 group z-20"
-                  onMouseEnter={() => setActiveCity(city)}
-                  onMouseLeave={() => setActiveCity(null)}
+                  onPointerEnter={(event) => { if (event.pointerType === 'mouse') setActiveCity(city); }}
+                  onPointerLeave={(event) => { if (event.pointerType === 'mouse') setActiveCity(null); }}
                   onClick={() => setActiveCity(isActive ? null : city)}
                 >
                   {/* Outer pulsating radial aura */}
@@ -261,14 +272,16 @@ export default function Exhibitions({ currentLang }: ExhibitionsProps) {
                   
                   {/* Pin core button representing map coordinates */}
                   <button
-                    className={`relative w-5 h-5 rounded-full border border-clay-black flex items-center justify-center cursor-pointer shadow-xl transition-all duration-300 ${city.id === 'sao-paulo' ? 'ring-2 ring-clay-black/20' : ''} ${
+                    className={`relative w-9 h-9 md:w-5 md:h-5 rounded-full border border-clay-black flex items-center justify-center cursor-pointer shadow-xl transition-all duration-300 touch-manipulation ${city.id === 'sao-paulo' ? 'ring-2 ring-clay-black/20' : ''} ${
                       isActive 
                         ? 'scale-135 bg-clay-black text-clay-black' 
                         : isSourceNode 
                           ? 'bg-clay-black border-2 border-clay-black ring-2 ring-museum-gold/25'
                           : 'bg-clay-black group-hover:scale-115'
                     }`}
-                    aria-label={`Ver eventos em ${city.name}`}
+                    aria-label={currentLang === 'pt' ? `Ver registros de ${city.name}` : `View records for ${city.name}`}
+                     aria-pressed={isActive}
+                     type="button"
                   >
                     <div className={`w-2.5 h-2.5 rounded-full transition-colors ${
                       isActive ? 'bg-clay-black' : isSourceNode ? 'bg-clay-black animate-pulse' : 'bg-clay-black/75'
@@ -276,7 +289,7 @@ export default function Exhibitions({ currentLang }: ExhibitionsProps) {
                   </button>
 
                   {/* Elegant floating metadata label under node */}
-                  <span className={`absolute ${city.id === 'uberlandia' ? 'bottom-7' : 'top-6'} left-1/2 -translate-x-1/2 font-mono tracking-widest uppercase whitespace-nowrap select-text ${city.id === 'sao-paulo' ? 'z-30 text-[10px] font-semibold text-clay-black bg-white px-2.5 py-1 border border-clay-black/40 shadow-sm' : 'text-[9px] text-clay-black bg-white/80 px-1.5 py-0.5 border border-clay-light/20'}`}>
+                  <span className={`absolute ${city.id === 'uberlandia' ? 'bottom-10 md:bottom-7' : city.id === 'veneza' ? 'bottom-11 md:top-6' : 'top-10 md:top-6'} left-1/2 -translate-x-1/2 font-mono tracking-widest uppercase whitespace-nowrap select-text ${city.id === 'sao-paulo' ? 'z-30 text-[10px] font-semibold text-clay-black bg-white px-2.5 py-1 border border-clay-black/40 shadow-sm' : 'text-[9px] text-clay-black bg-white/80 px-1.5 py-0.5 border border-clay-light/20'}`}>
                     {city.id === 'porto-velho' ? city.name.split(' (')[0].toUpperCase() + ' ✦' : city.name.split('/')[0].trim().toUpperCase()}
                   </span>
 
@@ -288,7 +301,7 @@ export default function Exhibitions({ currentLang }: ExhibitionsProps) {
                         animate={{ opacity: 1, y: 0, scale: 1 }}
                         exit={{ opacity: 0, scale: 0.95 }}
                         transition={{ duration: 0.25 }}
-                        className="absolute bottom-8 left-1/2 -translate-x-1/2 w-72 bg-white/95 border border-clay-black/25 p-4 shadow-2xl z-30 pointer-events-none rounded-none text-left"
+                        className="hidden md:block absolute bottom-8 left-1/2 -translate-x-1/2 w-72 bg-white/95 border border-clay-black/25 p-4 shadow-2xl z-30 pointer-events-none rounded-none text-left"
                       >
                         <div className="border-b border-clay-black/30 pb-2 mb-2">
                           <div className="flex items-center space-x-1.5">
@@ -316,49 +329,43 @@ export default function Exhibitions({ currentLang }: ExhibitionsProps) {
             })}
           </div>
 
-          {/* Mobile Map Carousel Fallback */}
-          <div className="md:hidden w-full flex flex-col justify-end p-4 h-full relative z-10">
-            <div className="bg-clay-dark/95 backdrop-blur-md border border-clay-black/30 p-4 flex flex-col justify-center select-text w-full">
-              <div className="flex justify-between items-center border-b border-clay-light/30 pb-2 mb-2">
-                <span className="font-serif text-xs font-bold text-clay-black flex flex-col gap-0.5 text-left">
-                  <span className="flex items-center gap-1">
-                    <MapPin className="w-3 h-3" />
-                    {activeCity?.name || 'Selecione no mapa'}
-                  </span>
-                  <span className="font-mono text-[8px] text-clay-black pl-4">{activeCity?.latLon}</span>
-                </span>
-                <div className="flex space-x-1 shrink-0">
-                  {cities.map((city) => (
-                    <button
-                      key={city.id}
-                      onClick={() => setActiveCity(city)}
-                      className={`w-2.5 h-2.5 rounded-full ${
-                        activeCity?.id === city.id ? 'bg-clay-black scale-110' : 'bg-clay-light'
-                      }`}
-                      aria-label={city.name}
-                    />
-                  ))}
-                </div>
-              </div>
-              <div className="min-h-12 flex flex-col justify-center text-left">
-                {activeCity ? (
-                  (currentLang === 'pt' ? activeCity.eventsPT : activeCity.eventsEN).map((ev, idx) => (
-                    <p key={idx} className="text-[11px] font-sans text-clay-black leading-relaxed font-normal mt-1">
-                      {ev}
-                    </p>
-                  ))
-                ) : (
-                  <p className="text-[11px] font-sans text-clay-black italic text-center">
-                    Toque nos pontos de paginação para navegar nas rotas geográficas
-                  </p>
-                )}
-              </div>
-            </div>
           </div>
-
         </div>
 
-        {/* RECENT / DETAILED EDITORIAL DIRECTORY LISTINGS (Two Column split) */}
+        {/* Mobile: visible details below the scrollable map, never covering the drawing. */}
+        <div className="md:hidden mb-16 border border-clay-black/25 bg-white p-5 select-text" aria-live="polite">
+          {activeCity ? (
+            <>
+              <div className="flex items-start justify-between gap-3 border-b border-clay-black/15 pb-3 mb-3">
+                <div>
+                  <h4 className="font-serif text-xl font-medium text-clay-black">{activeCity.name}</h4>
+                  <p className="font-mono text-[10px] text-clay-black/75 mt-1">{activeCity.latLon}</p>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => setActiveCity(null)}
+                  className="shrink-0 border border-clay-black/25 px-3 py-2 font-mono text-[10px] text-clay-black"
+                  aria-label={currentLang === 'pt' ? 'Fechar informações da cidade' : 'Close city details'}
+                >
+                  {currentLang === 'pt' ? 'Fechar' : 'Close'}
+                </button>
+              </div>
+              <div className="space-y-2">
+                {(currentLang === 'pt' ? activeCity.eventsPT : activeCity.eventsEN).map((ev, idx) => (
+                  <p key={idx} className="font-sans text-sm leading-relaxed text-clay-black">{ev}</p>
+                ))}
+              </div>
+            </>
+          ) : (
+            <p className="font-sans text-sm leading-relaxed text-clay-black">
+              {currentLang === 'pt'
+                ? 'Toque em uma cidade do mapa para consultar sua trajetória. Deslize para encontrar as cidades à direita.'
+                : 'Tap a city on the map to see its history. Swipe to reach cities farther right.'}
+            </p>
+          )}
+        </div>
+
+                {/* RECENT / DETAILED EDITORIAL DIRECTORY LISTINGS (Two Column split) */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
           
           {/* Column 1: Solo Exhibitions (Individuais) */}
