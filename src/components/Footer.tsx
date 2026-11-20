@@ -99,6 +99,9 @@ export default function Footer({ currentLang }: FooterProps) {
         <a className="hover:underline underline-offset-4" href={currentLang === 'pt' ? '/obras/' : '/en/works/'}>
           {currentLang === 'pt' ? 'Séries e obras' : 'Works and series'}
         </a>
+        <a className="hover:underline underline-offset-4" href="https://memoriadamateria.com/" target="_blank" rel="noopener noreferrer">
+          {currentLang === 'pt' ? 'Memória da Matéria' : 'Memory of Matter'} ↗
+        </a>
         <a className="hover:underline underline-offset-4" href={currentLang === 'pt' ? '/exposicoes/' : '/en/exhibitions/'}>
           {currentLang === 'pt' ? 'Exposições e acervos' : 'Exhibitions and collections'}
         </a>
